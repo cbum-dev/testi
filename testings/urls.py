@@ -1,6 +1,7 @@
-from django.contrib import admin
 from django.urls import path,include
-from . import views
+from .views import front, note, note_detail
 urlpatterns = [
-    path('',views.boys1),
+    path("", front, name="front"),
+    path("notes/", note, name="note"),
+    path("notes/<int:pk>/", note_detail, name="detail"),
 ]
